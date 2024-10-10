@@ -1,9 +1,10 @@
+import { BrowserRouter, RouterProvider } from "react-router-dom";
+import router from "./routes/route";
+
 function App() {
   return (
     <>
-      <div>
-        <Button>Click me</Button>
-      </div>
+      <RouterProvider router={router} />
     </>
   );
 }
