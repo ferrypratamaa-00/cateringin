@@ -21,6 +21,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { LogOut, Search, User, UserCircle2 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const form = useForm({
@@ -82,6 +83,7 @@ function Searching({ form, onSubmit }) {
 }
 
 function Menu() {
+  const navigate = useNavigate();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -96,7 +98,7 @@ function Menu() {
         <DropdownMenuGroup>
           <DropdownMenuItem>
             <User className='mr-2 h-4 w-4' />
-            <span>Profile</span>
+            <span onClick={() => navigate("/profile")}>Profile</span>
             <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
           </DropdownMenuItem>
         </DropdownMenuGroup>
